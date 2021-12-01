@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Effects and Animation</title>
+	<link rel="stylesheet" href="./style.css">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+     crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<h1>jQuery Crash  Course | Effects & Animation</h1>
+	</header>
+
+
+
+    <div id="container">
+        <button id="btnFadeOut">fadeOut</button>
+        <button id="btnFadeIn">fadeIn</button>
+        <button id="btnFadeTog">fadeToggle</button>
+
+    <hr>
+    <button id="btnSlideUp">slide up</button>
+    <button id="btnSlideDown">slide down</button>
+    <button id="btnSlideTog">slide Toggle</button> 
+
+    <div id="Box">hello world</div>
+
+     <hr> 
+
+  
+
+    <button id="moveLeft">move left</button>
+    <button id="moveRight">move right </button>
+    <button id="moveAround"> move around</button> 
+    <div id="Box2"></div>
+
+
+    </div>
+
+    <script>
+        $(document).ready(function (){
+
+// show feed out & and in && toggle///////////////////
+
+            $('#btnFadeOut').on('click', function(){
+                $('#Box').fadeOut('slow')
+                $('#Box').fadeOut('fast')
+                $('#Box').fadeOut(3000,  function(){
+                    $('#btnFadeOut').text('its clear') 
+                })
+
+                $('#btnFadeIn').on('click', function(){
+                    $('#Box').fadeIn(3000) 
+                })
+                $('#btnFadeTog').on('click', function(){
+                    $('#Box').fadeToggle(1000) 
+                })
+
+            })
+
+
+//   slide up & slide down && slide toggle
+
+            $('#btnSlideUp').on('click', function(){
+                $('#Box').slideUp(3000)
+                     
+                })
+                $('#btnSlideDown').on('click', function(){
+                $('#Box').slideDown(3000)
+                     
+                })
+                $('#btnSlideTog').on('click', function(){
+                $('#Box').slideToggle(3000)
+                     
+                })
+
+                // move left && move right && move around
+
+// move left
+                $('#moveLeft').on('click', function(){
+                $('#Box2').animate({
+                    left: 500,
+                    height: "300px",
+                    width : "300px",
+                    opacity : "0.5"
+
+                })   
+            })
+//                  move right
+
+            $('#moveRight').on('click', function(){
+                $('#Box2').animate({
+                    left: 0,
+                    height: "50px",
+                    width : "50px",
+                    opacity : "1"
+                })
+                // move around
+                })
+                $('#moveAround').on('click', function(){
+              var box =  $('#Box2')
+                 box.animate({
+                     left : 300
+                 })
+
+                 box.animate({
+                    top: 300
+                 })
+
+                 box.animate({
+                     left :0,
+                     top: 300
+                 })
+
+                 box.animate({
+                     left :0,
+                     top: 0
+                 })
+                    
+               
+        })
+    })
+
+
+
+
+    </script>
+	
+</body>
+</html>
